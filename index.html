@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume App</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="./images/favicon.icon" type="image/x-icon">
+</head>
+<body>
+  <div class="header">
+    <h1>Resume App</h1>
+    <select name="template" id="template">
+      <option value="default">Default</option>
+      <option value="fancy">Fancy</option>
+    </select>
+    <button id="new-section-btn">New Section</button>
+    <button id="compile-resume-btn">Compile Resume</button>
+  </div>
+  <div class="editor">
+    <input type="text" name="input-title" id="input-title">
+    <input type="text" name="input-text" id="input-text">
+  </div>
+  <div class="display">
+    <div class="display-section">
+      <h1>Section Title</h1>
+      <h3>Section Sub heading</h3>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 1</li>
+        <li>Item 1</li>
+        <li>Item 1</li>
+      </ul>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
