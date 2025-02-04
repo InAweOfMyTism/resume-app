@@ -6,7 +6,6 @@ const compileResumeBtn = document.getElementById("compile-resume-btn");
 const displayArea = document.getElementById("display-area");
 
 newSectionBtn.addEventListener('click', () => {
-  console.log("Click!");
   const newSection = document.createElement("DIV");
   newSection.classList.add("display-section");
   const newSectionControls = document.createElement("DIV")
@@ -14,7 +13,6 @@ newSectionBtn.addEventListener('click', () => {
 
   const newSectionToggle = document.createElement("BUTTON");
   const newToggleIcon = document.createElement("IMG");
-
   const newSectionExpand = document.createElement("BUTTON");
   const newExpandIcon = document.createElement("IMG");
   const newSectionEdit = document.createElement("BUTTON");
@@ -36,7 +34,22 @@ newSectionBtn.addEventListener('click', () => {
   newSectionControls.appendChild(newSectionExpand);
   newSectionControls.appendChild(newSectionEdit);
   newSectionControls.appendChild(newSectionDelete);
+
+
+  const newSectionHeading = document.createElement("DIV");
+  newSectionHeading.classList.add("section-heading");
+  const newTitle = document.createElement("H1");
+  newTitle.innerText = `Title`;
+  newSectionHeading.appendChild(newTitle);
+
+  const newSectionContent = document.createElement("DIV");
+  newSectionContent.classList.add("section-content");
+  newSectionContent.innerHTML = getContent();
+
+
   newSection.appendChild(newSectionControls);
+  newSection.appendChild(newSectionHeading);
+  newSection.appendChild(newSectionContent);
   displayArea.appendChild(newSection);
 
 });
@@ -44,3 +57,7 @@ newSectionBtn.addEventListener('click', () => {
 compileResumeBtn.addEventListener('click', () => {
   console.log("Click?");
 })
+
+function getContent() {
+  return "<p>Hello There!</p>";
+}
