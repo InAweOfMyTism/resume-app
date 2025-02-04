@@ -1,5 +1,5 @@
 :root{
-  --background-color-a: rgb(255,0,0);
+  --background-color-a: rgb(219, 123, 231);
   --background-color-b: rgb(0,0,255);
   --header-bg-color: rgb(5, 5, 207);
   --header-btn-color: rgb(83, 71, 255);
@@ -16,8 +16,13 @@
 body{
   background: linear-gradient(135deg, var(--background-color-a), var(--background-color-b));
   min-height: 100vh;
+  display: grid;
+  grid-template-columns: 30vw 70vw;
+  grid-template-rows: 20vh 80vh;
 }
 .header{
+  grid-area: 1 / 1 / 2 / 3;
+  border: 5px solid tomato;
   width: 100%;
   background-color: var(--header-bg-color);
   display: flex; 
@@ -52,10 +57,11 @@ body{
   background-color: var(--header-btn-hvr-color)
 }
 .editor{
-  width: 30%;
+  border: 5px solid greenyellow;
+  grid-area: 2 / 1 / 3 / 2;
+  /* width: 30%; */
   display: flex;
   flex-direction: column;
-  height: 70vh;
 }
 .editor input{
   margin: 1rem;
@@ -66,4 +72,50 @@ body{
 }
 #input-text{
   flex-grow: 1;
+}
+.display{
+  border: 5px solid blue;
+  grid-area: 2 / 2 / 3 / 3;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.display-section{
+  border: 5px solid black;
+  margin: .5rem;
+  /* min-width: 20rem; */
+  flex-grow: 1;
+  max-width: 18rem;
+  max-height:35rem;
+  padding: 1.5rem;
+  border-radius: 15px;
+  background-color: antiquewhite;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.display-section .section-content{
+  flex-grow: 1;
+}
+
+.display-section .section-controls{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+}
+
+.display-section .section-controls button{
+  border: none;
+  background-color: tomato;
+  margin: 0 .5rem;
+  padding: .5rem;
+  border-radius: 1rem;
+}
+
+.display-section .section-controls button img{
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
 }
